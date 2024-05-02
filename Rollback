@@ -6,7 +6,7 @@ local Rollback = function()
 
     game:GetService("Players").LocalPlayer.Units.ChildAdded:Connect(function(Child)
         local Rarity = Child:FindFirstChild("Rarity")
-        if Rarity and Rarity.Value == "Mythic" then 
+        if Rarity and Rarity.Value == "Mythic" or Rarity.Value == "Secret" then 
             rconsoleprint("Mythic Obtained: "..Child.Name)
         end 
     end)
