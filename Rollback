@@ -1,0 +1,15 @@
+local Team = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ChangeTeam")
+local Units = game:GetService("Players").LocalPlayer:WaitForChild("Units")
+
+local Rollback = function()
+    Team:FireServer("Team1\255")
+
+    game:GetService("Players").LocalPlayer.Units.ChildAdded:Connect(function(Child)
+        local Rarity = Child:FindFirstChild("Rarity")
+        if Rarity and Rarity.Value == "Mythic" then 
+            rconsoleprint("Mythic Obtained: "..Child.Name)
+        end 
+    end)
+end 
+
+Rollback()
