@@ -1,7 +1,1 @@
-local Team = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ChangeTeam")
 
-local Cancel = function()
-    Team:FireServer("Team1")
-end 
-
-Cancel()
